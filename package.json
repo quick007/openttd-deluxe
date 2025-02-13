@@ -22,11 +22,14 @@
     "@electron-forge/plugin-vite": "^7.6.1",
     "@electron-forge/shared-types": "^7.6.1",
     "@electron/fuses": "^1.8.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@typescript-eslint/parser": "^8.24.0",
     "electron": "34.1.1",
     "eslint": "^9.20.1",
     "eslint-plugin-import": "^2.31.0",
+    "scheduler": "^0.25.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
     "vite": "^6.1.0"
@@ -38,7 +41,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
