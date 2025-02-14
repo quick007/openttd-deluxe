@@ -1,11 +1,60 @@
 @import "tailwindcss";
 
 @font-face {
-	font-family: "Jersey";
+	font-family: "Jersey Title";
+	font-weight: 400;
+	font-style: normal;
 	src: url("/fonts/Jersey10-Regular.ttf");
 }
 
+@font-face {
+	font-family: "Jersey";
+	font-weight: 400;
+	font-style: normal;
+	src: url("/fonts/Jersey20-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Nunito Sans";
+	font-optical-sizing: auto;
+	font-weight: 200 300 400 500 600 700 800 900 1000;
+	font-style: normal;
+	font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+	src: url("/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf");
+}
+
+@font-face {
+	font-family: "Nunito Sans";
+	font-optical-sizing: auto;
+	font-weight: 200 300 400 500 600 700 800 900 1000;
+	font-style: italic;
+	font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+	src: url("/fonts/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf");
+}
+
+/* @font-face {
+	font-family: "Pixelify Sans";
+	font-optical-sizing: auto;
+	font-weight: 400 500 600 700; 
+	font-style: normal;
+	src: url("/fonts/PixelifySans-VariableFont_wght.ttf");
+} */
+
+@font-face {
+	font-family: "Jacquard";
+	font-weight: 400;
+	font-style: normal;
+	src: url("/fonts/Jacquard12-Regular.ttf");
+}
+
 @theme {
-	--default-font-family: "Jersey";
+	--default-font-family: "Nunito Sans";
 	--default-transition-duration: 250ms;
+	--font-jersey: "Jersey";
+	--font-jersey-title: "Jersey Title";
+	--font-jacquard: "Jacquard";
 }
