@@ -6,7 +6,7 @@ const ipcOn: {
 	[key: string]: (
 		event: IpcMainEvent,
 		browserWindow: BrowserWindow,
-		...args: any[]
+		...args: unknown[]
 	) => void;
 } = {
 	setTitle: handleSetTitle,

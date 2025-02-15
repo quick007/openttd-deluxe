@@ -5,6 +5,7 @@ export default function Button({
 	className,
 	...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+	window.electronAPI.setTitle("test");
 	return (
 		<button
 			className={cn(
