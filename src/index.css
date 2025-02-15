@@ -57,4 +57,21 @@
 	--font-jersey: "Jersey";
 	--font-jersey-title: "Jersey Title";
 	--font-jacquard: "Jacquard";
+
+	--animate-press: button-press 0.15s ease-in-out;
+
+	@keyframes button-press {
+		0% {
+			transform: translateY(0rem);
+			--tw-inset-shadow-color: transparent;
+		}
+		50% {
+			transform: translateY(1px);
+			--tw-inset-shadow-color: color-mix(in oklab, var(--color-black) /* #000 = #000000 */ 10%, transparent);
+		}
+		100% {
+			transform: translateY(0rem);
+			--tw-inset-shadow-color: transparent;
+		}
+	}
 }

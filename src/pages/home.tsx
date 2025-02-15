@@ -1,5 +1,6 @@
 import Button from "@/components/button";
 import bgVideo from "@/assets/openttd-recording.mp4";
+import cogWheelIcon from "@/assets/pixelart/cogwheel/main.png";
 
 export default function Home() {
 	return (
@@ -22,15 +23,16 @@ export default function Home() {
 						</Button>
 						<Button>New Game</Button>
 						<Button>Load Game</Button>
-						<Button>Join Game</Button>
-						<Button>Host Game</Button>
-						<Button>Settings</Button>
+						<Button>Mutliplayer</Button>
 						<Button>Mods</Button>
 						</div>
 						<hr className="border-b border-cyan-950" />
 						
-						<div className="col-span-2 flex justify-center py-2">
+						<div className="col-span-2 flex justify-center  py-2 relative">
 							<Button className="w-52">Quit Game</Button>
+							<Button className="absolute right-2 size-7 flex items-center justify-center !py-0">
+								<img src={cogWheelIcon} className="size-4" />
+							</Button>
 						</div>
 					
 				</section>
