@@ -1,8 +1,11 @@
-import Button from "@/components/button";
-import bgVideo from "@/assets/openttd-recording.mp4";
-import cogWheelIcon from "@/assets/pixelart/cogwheel/main.png";
+import Button from "@components/button";
+import bgVideo from "@assets/openttd-recording.mp4";
+import cogWheelIcon from "@assets/pixelart/cogwheel/main.png";
+import { Page, useUserState } from "../stores/user";
 
 export default function Home() {
+	const setPage = useUserState(state => state.setPage)
+
 	return (
 		<>
 			<div className="flex items-center flex-col relative h-screen">
@@ -21,15 +24,15 @@ export default function Home() {
 							<span>Continue Game</span>
 							<span className="text-xs font-normal">Server (id: 1234)</span>
 						</Button>
-						<Button>New Game</Button>
-						<Button>Load Game</Button>
-						<Button>Mutliplayer</Button>
-						<Button>Mods</Button>
+						<Button onClick={() => setPage(Page.NEW_GAME)}>New Game</Button>
+						<Button onClick={() => setPage(Page.LOAD_GAME)}>Load Game</Button>
+						<Button onClick={() => setPage(Page.MULTIPLAYER)}>Mutliplayer</Button>
+						<Button onClick={() => setPage(Page.MODS)}>Mods</Button>
 						</div>
 						<hr className="border-b border-cyan-950" />
 						
 						<div className="col-span-2 flex justify-center  py-2 relative">
-							<Button className="w-52">Quit Game</Button>
+							<Button className="w-52" onClick={window.close}>Quit Game</Button>
 							<Button className="absolute right-2 size-7 flex items-center justify-center !py-0">
 								<img src={cogWheelIcon} className="size-4" />
 							</Button>

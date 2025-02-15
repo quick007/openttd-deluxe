@@ -4,6 +4,9 @@ export enum Page {
 	HOME = "home",
 	SETTINGS = "settings",
 	NEW_GAME = "newgame",
+	LOAD_GAME = "loadgame",
+	MULTIPLAYER = "multiplayer",
+	MODS = "mods",
 	IN_GAME = "ingame",
 }
 
@@ -20,7 +23,7 @@ interface UserState {
 	openMultiplayerGame: (name: string, password: string) => Promise<void>;
 }
 
-const useUserState = create<UserState>()((set) => ({
+export const useUserState = create<UserState>()((set) => ({
 	page: Page.HOME,
 	settingsOpen: false,
 	userName: undefined,
