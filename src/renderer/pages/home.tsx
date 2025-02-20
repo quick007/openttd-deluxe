@@ -33,7 +33,7 @@ export default function Home() {
 						
 						<div className="col-span-2 flex justify-center  py-2 relative">
 							<Button className="w-52" onClick={window.close}>Quit Game</Button>
-							<Button className="absolute right-2 size-7 flex items-center justify-center !py-0">
+							<Button className="absolute right-2 size-7 flex items-center justify-center !py-0" onClick={() => setPage(Page.SETTINGS)}>
 								<img src={cogWheelIcon} className="size-4" />
 							</Button>
 						</div>

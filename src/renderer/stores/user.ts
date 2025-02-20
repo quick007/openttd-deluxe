@@ -28,7 +28,9 @@ export const useUserStore = create<UserStore>()((set) => ({
 	settingsOpen: false,
 	userName: undefined,
 
-	setPage: (page) => {},
+	setPage: (page) => {
+		set({ page })
+	},
 	setSettingsOpen: (open) => {},
 	setUsername: (name) => {},
 
