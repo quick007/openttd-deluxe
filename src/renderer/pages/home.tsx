@@ -1,10 +1,10 @@
 import Button from "@components/button";
 import bgVideo from "@assets/openttd-recording.mp4";
 import cogWheelIcon from "@assets/pixelart/cogwheel/main.png";
-import { Page, useUserState } from "../stores/user";
+import { Page, useUserStore } from "../stores/user";
 
 export default function Home() {
-	const setPage = useUserState(state => state.setPage)
+	const setPage = useUserStore(state => state.setPage)
 
 	return (
 		<>
