@@ -1,8 +1,9 @@
-import { Units, type Settings } from "../../../renderer/stores/settings";
 import {
 	defaultSettings,
 	getSettings,
 	setSettings,
+	Settings,
+	settingsSchema,
 } from "../_shared/settings";
 
 /**
@@ -11,10 +12,15 @@ import {
  */
 export const fetchSettings = async (): Promise<ReturnValue<Settings>> => {
 	const settings = await getSettings();
-	if (settings.data) return settings;
 
 	// no clue if this works on linux or mac
-	if (settings.error.includes("no such file or directory")) {
+	// for now I'm just going to go ahead and reset the settings if it isn't in parity with the settings version.
+	// in the future there should probably be migration functions
+	if (
+		(settings.error && settings.error.includes("no such file or directory")) ||
+		!settings.data.version ||
+		settings.data.version != defaultSettings.version
+	) {
 		const createData = await setSettings();
 		if (createData.error) return createData;
 
@@ -22,6 +28,13 @@ export const fetchSettings = async (): Promise<ReturnValue<Settings>> => {
 			error: null,
 			data: defaultSettings,
 		};
+	}
+
+	if (settings.data) {
+		const { data, error } = settingsSchema.safeParse(settings.data);
+		if (data) return settings;
+
+		return { data: null, error: "The provided settings didn't align with the internal schema"};
 	}
 
 	return settings;
