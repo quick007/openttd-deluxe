@@ -19,15 +19,17 @@ export type IElectronAPI = {
 } & {
 	[K in keyof typeof ipcHandle]: (
 		...args: ExtractRendererParams<(typeof ipcHandle)[K]>
-	) => void;
+	) => ReturnType<(typeof ipcHandle)[K]>;
 };
 
 // Augment the global Window interface so that TS knows about window.electronAPI.
 declare global {
 	interface Window {
 		electronAPI: IElectronAPI;
-	}
+	};
+	type ReturnValue<T> = {error: null, data: T} | {error: string, data: null};
 }
 
 // This file is a module.
 export {};
+

@@ -31,7 +31,8 @@ export const useSettingsStore = create<SettingsStore>()((set) => ({
 		autosaveInterval: null,
 		gameConfig: null,
 		fetch: async () => {
-			const test = window.electronAPI.fetchSettings()
+			const test = await window.electronAPI.fetchSettings()
+			console.log(test)
 			return;
 		}
 }))
