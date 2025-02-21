@@ -54,6 +54,8 @@ export const getSettings = async (): Promise<ReturnValue<Settings>> => {
 			await file.readFile({ encoding: "utf-8" })
 		);
 
+		file.close();
+
 		return { data: contents, error: null };
 	} catch (err) {
 		return { data: null, error: err.message };

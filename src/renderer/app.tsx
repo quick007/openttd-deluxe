@@ -2,10 +2,8 @@ import { createRoot } from "react-dom/client";
 import Home from "./pages/home";
 import useLoadContent from "./lib/hooks/useloadContent";
 import { Page, useUserStore } from "./stores/user";
+import bgVideo from "@assets/openttd-recording.mp4";
 import Settings from "./pages/settings";
-
-// const rootElement = document.getElementById('root');
-// if (!rootElement) throw new Error('Failed to find the root element');
 
 const root = createRoot(document.body);
 
@@ -39,7 +37,19 @@ const App = () => {
 
 	return (
 		<>
-			{content}
+			<div className="flex items-center flex-col relative h-screen">
+				{content}
+				<div className="absolute -z-10 inset-0">
+					<video
+						src={bgVideo}
+						loop
+						// autoPlay
+						controls={false}
+						className="object-cover h-full w-full select-none"
+					></video>
+				</div>
+				{/* <img src={imgUrl} alt="" className="size-10" /> */}
+			</div>
 		</>
 	);
 };

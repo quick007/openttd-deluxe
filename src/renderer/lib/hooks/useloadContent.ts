@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 
 export default function useLoadContent() {
 	const [loading, setLoading] = useState(true);
-	const [fetching, setFetching] = useState(false);
+	const [fetched, setFetched] = useState(false);
 
 	const fetchSettings = useSettingsStore((state) => state.fetch);
 
 	useEffect(() => {
 		(async () => {
-			if (!fetching) {
-				console.log("uh oh")
-				setFetching(true);
+			if (!fetched) {
+				console.log("RAN FETCHER!!!!")
+				setFetched(true);
 				await Promise.all([fetchSettings()]);
 				setLoading(false);
 			}

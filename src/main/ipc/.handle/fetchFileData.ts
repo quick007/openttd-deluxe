@@ -34,7 +34,10 @@ export const fetchSettings = async (): Promise<ReturnValue<Settings>> => {
 		const { data, error } = settingsSchema.safeParse(settings.data);
 		if (data) return settings;
 
-		return { data: null, error: "The provided settings didn't align with the internal schema"};
+		return {
+			data: null,
+			error: "The provided settings didn't align with the internal schema",
+		};
 	}
 
 	return settings;
