@@ -1,23 +1,15 @@
 import Button from "@components/button";
 import cogWheelIcon from "@assets/pixelart/cogwheel/main.png";
 import { Page, useUserStore } from "../stores/user";
+import Header from "../components/header";
 
 export default function Home() {
 	const setPage = useUserStore((state) => state.setPage);
 
 	return (
 		<>
-			<div className="select-none font-jersey mt-32 ab">
-				<header>
-				<h1 className="text-6xl xl:text-8xl bg-linear-to-b from-amber-500 to-amber-600 bg-clip-text text-transparent z-10">
-					OpenTTD Deluxe
-				</h1>
-				<span className="text-6xl xl:text-8xl text-amber-950 mt-1 ml-1 translate-0">
-					OpenTTD Deluxe
-				</span>
-				</header>
-			</div>
-			<section className="my-auto bg-[#012937] ring-2 ring-cyan-950 shadow  w-96 gap-6 text-sm font-bold">
+			<Header />
+			<section className="my-auto bg-[#012937] ring-2 ring-cyan-950 shadow  w-96 gap-6 text-sm font-bold z-10 py-">
 				<div className="border-b-2 border-cyan-950 py-1 col-span-2 text-center text-gray-100 text-xs inset-shadow-sm inset-shadow-black/30">
 					OpenTTD Deluxe 0.0.0-beta0
 				</div>

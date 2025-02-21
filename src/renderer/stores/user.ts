@@ -29,7 +29,7 @@ export const useUserStore = create<UserStore>()((set) => ({
 	userName: undefined,
 
 	setPage: (page) => {
-		set({ page })
+		document.startViewTransition(() => set({ page }));
 	},
 	setSettingsOpen: (open) => {},
 	setUsername: (name) => {},
