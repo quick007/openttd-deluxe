@@ -1,5 +1,6 @@
 import Button from "../components/button";
 import Header from "../components/header";
+import PageComponent from "../components/page";
 import { Page, useUserStore } from "../stores/user";
 
 export default function Settings() {
@@ -8,10 +9,10 @@ export default function Settings() {
 	return (
 		<>
 			<Header small={true} />
-			<div className="z-10">
-				settings page!!!!111!!!!
+			<PageComponent name="Settings" className="my-auto h-[75vh] w-200">
+				
 				<Button onClick={() => setPage(Page.HOME)}>Home!</Button>
-			</div>
+			</PageComponent>
 		</>
 	);
 }

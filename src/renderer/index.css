@@ -58,6 +58,8 @@
 	--font-jersey-title: "Jersey Title";
 	--font-jacquard: "Jacquard";
 
+	--color-cyan-1000: oklch(0.262 0.056 229.695);
+
 	--animate-press: button-press 0.15s ease-in-out;
 
 	@keyframes button-press {
@@ -74,4 +76,10 @@
 			--tw-inset-shadow-color: transparent;
 		}
 	}
+}
+
+html::view-transition-group(*) {
+	animation-duration: 400ms;
+	animation-timing-function: ease-in-out;
+	/* background-color: rgb(0 0 0); */
 }

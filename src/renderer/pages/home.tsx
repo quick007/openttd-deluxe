@@ -2,6 +2,7 @@ import Button from "@components/button";
 import cogWheelIcon from "@assets/pixelart/cogwheel/main.png";
 import { Page, useUserStore } from "../stores/user";
 import Header from "../components/header";
+import PageComponent from "../components/page";
 
 export default function Home() {
 	const setPage = useUserStore((state) => state.setPage);
@@ -9,10 +10,7 @@ export default function Home() {
 	return (
 		<>
 			<Header />
-			<section className="my-auto bg-[#012937] ring-2 ring-cyan-950 shadow  w-96 gap-6 text-sm font-bold z-10 py-">
-				<div className="border-b-2 border-cyan-950 py-1 col-span-2 text-center text-gray-100 text-xs inset-shadow-sm inset-shadow-black/30">
-					OpenTTD Deluxe 0.0.0-beta0
-				</div>
+			<PageComponent name="OpenTTD Deluxe 0.0.0-beta0" className="my-auto w-96">
 				<div className="grid grid-cols-2 gap-4 p-2">
 					<Button className="col-span-2 text-base">
 						<span>Continue Game</span>
@@ -36,7 +34,7 @@ export default function Home() {
 						<img src={cogWheelIcon} className="size-4" />
 					</Button>
 				</div>
-			</section>
+			</PageComponent>
 			<p className="abolute inset-x-0 text-center bottom-4 text-sm font-medium text-gray-200"></p>
 		</>
 	);
