@@ -37,7 +37,7 @@ const App = () => {
 
 	return (
 		<>
-			<div className="flex items-center flex-col relative h-screen">
+			<div className="flex items-center flex-col relative h-screen text-gray-200">
 				{content}
 				<div className="absolute -z-10 inset-0">
 					<video

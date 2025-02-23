@@ -24,7 +24,7 @@ interface UserStore {
 }
 
 export const useUserStore = create<UserStore>()((set) => ({
-	page: Page.HOME,
+	page: Page.SETTINGS,
 	settingsOpen: false,
 	userName: undefined,
 
