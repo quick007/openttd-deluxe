@@ -1,5 +1,6 @@
 import { cn } from "../lib/cn";
 import { Page, useUserStore } from "../stores/user";
+import Button from "./button";
 
 export default function PageComponent({
 	name,
@@ -24,12 +25,13 @@ export default function PageComponent({
 		>
 			<div className="border-b-2 border-cyan-950 col-span-2 text-center text-gray-100 text-xs flex relative isolate">
 				{homeButton && (
-					<button
-						className="px-2 py-1 border-cyan-950 border-r-2 inset-shadow-xs inset-shadow-white/5 cursor-pointer z-10"
+					<Button
+						btnType="secondary"
+						className="px-2 py-1 border-cyan-950 border-r-2 "
 						onClick={() => setPage(Page.HOME)}
 					>
 						{"🏠"} Home
-					</button>
+					</Button>
 				)}
 				<p className="inset-shadow-sm inset-shadow-black/30 text-center grow h-7">
 					{/* This centers settings in the absolute center of the container rather than the center relative to the  */}

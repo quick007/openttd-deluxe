@@ -1,10 +1,12 @@
 import { cn } from "../lib/cn";
 
 export default function Header({ small }: { small?: boolean }) {
-
 	return (
 		<div
-			className={cn(small ? "mt-4" : "mt-32", "select-none font-jersey absolute")}
+			className={cn(
+				small ? "mt-4" : "mt-32",
+				"select-none font-jersey absolute"
+			)}
 			style={{ viewTransitionName: "header-menu" }}
 		>
 			<header className="-z-10 grid *:[grid-row-start:1] *:[grid-column-start:1]">
@@ -18,7 +20,9 @@ export default function Header({ small }: { small?: boolean }) {
 				</h1>
 				<span
 					className={cn(
-						small ? "text-3xl translate-x-0.5 translate-y-0.5" : "text-6xl xl:text-8xl translate-x-1 translate-y-1",
+						small
+							? "text-3xl translate-x-0.5 translate-y-0.5"
+							: "text-6xl xl:text-8xl translate-x-1 translate-y-1",
 						"text-amber-950"
 					)}
 				>

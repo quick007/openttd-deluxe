@@ -15,8 +15,11 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"@assets/*": ["./src/renderer/assets/*"],
-			"@components/*": ["./src/renderer/components/*"],
-		},
+			"@components/*": ["./src/renderer/components/*"]
+		}
+
 		// "types": ["./src/renderer/interface.d.ts"]
 	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
 }
