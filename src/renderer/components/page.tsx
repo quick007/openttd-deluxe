@@ -27,7 +27,7 @@ export default function PageComponent({
 				{homeButton && (
 					<Button
 						btnType="secondary"
-						className="border-r-2 border-cyan-950 px-2 py-1"
+						className="border-r-2 border-cyan-950 px-2"
 						onClick={() => setPage(Page.HOME)}
 					>
 						{"🏠"} Home
