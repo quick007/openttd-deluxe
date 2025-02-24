@@ -1,9 +1,9 @@
-import { createRoot } from "react-dom/client";
-import Home from "./pages/home";
-import useLoadContent from "./lib/hooks/useloadContent";
-import { Page, useUserStore } from "./stores/user";
 import bgVideo from "@assets/openttd-recording.mp4";
+import { createRoot } from "react-dom/client";
+import useLoadContent from "./lib/hooks/useloadContent";
+import Home from "./pages/home";
 import Settings from "./pages/settings";
+import { Page, useUserStore } from "./stores/user";
 
 const root = createRoot(document.body);
 
@@ -37,15 +37,15 @@ const App = () => {
 
 	return (
 		<>
-			<div className="flex items-center flex-col relative h-screen text-gray-200">
+			<div className="relative flex h-screen flex-col items-center text-gray-200">
 				{content}
-				<div className="absolute -z-10 inset-0">
+				<div className="absolute inset-0 -z-10">
 					<video
 						src={bgVideo}
 						loop
 						// autoPlay
 						controls={false}
-						className="object-cover h-full w-full select-none"
+						className="h-full w-full object-cover select-none"
 					></video>
 				</div>
 				{/* <img src={imgUrl} alt="" className="size-10" /> */}

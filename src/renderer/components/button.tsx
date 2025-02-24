@@ -9,7 +9,7 @@ export default function Button({
 	btnType?: "primary" | "secondary";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>) {
 	// window.electronAPI.setTitle("among");
-	
+
 	return (
 		<button
 			className={cn(

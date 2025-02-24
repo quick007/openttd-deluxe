@@ -19,21 +19,21 @@ export default function PageComponent({
 		<section
 			className={cn(
 				className,
-				"bg-cyan-1000 ring-2 ring-cyan-950 shadow text-sm font-bold z-10 duration-1000 "
+				"bg-cyan-1000 z-10 text-sm font-bold ring-2 shadow ring-cyan-950 duration-1000",
 			)}
 			style={{ viewTransitionName: "main-border-box-page-component" }}
 		>
-			<div className="border-b-2 border-cyan-950 col-span-2 text-center text-gray-100 text-xs flex relative isolate">
+			<div className="relative isolate col-span-2 flex border-b-2 border-cyan-950 text-center text-xs text-gray-100">
 				{homeButton && (
 					<Button
 						btnType="secondary"
-						className="px-2 py-1 border-cyan-950 border-r-2 "
+						className="border-r-2 border-cyan-950 px-2 py-1"
 						onClick={() => setPage(Page.HOME)}
 					>
 						{"🏠"} Home
 					</Button>
 				)}
-				<p className="inset-shadow-sm inset-shadow-black/30 text-center grow h-7">
+				<p className="h-7 grow text-center inset-shadow-sm inset-shadow-black/30">
 					{/* This centers settings in the absolute center of the container rather than the center relative to the  */}
 					<span className="absolute inset-x-0 -z-10 pt-1.5">{name}</span>
 				</p>

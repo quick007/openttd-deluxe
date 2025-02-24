@@ -10,7 +10,7 @@ export default function useLoadContent() {
 	useEffect(() => {
 		(async () => {
 			if (!fetched) {
-				console.log("RAN FETCHER!!!!")
+				console.log("RAN FETCHER!!!!");
 				setFetched(true);
 				await Promise.all([fetchSettings()]);
 				setLoading(false);

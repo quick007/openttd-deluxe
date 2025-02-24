@@ -1,6 +1,6 @@
 import ipcHandle from "@/main/ipc/.handle";
 import ipcOn from "@/main/ipc/.on";
-import type { IpcMainEvent, BrowserWindow } from "electron";
+import type { IpcMainEvent } from "electron";
 
 // Helper type: given a function that expects (event, browserWindow, ...args),
 // extract only the parameters after the first two.
@@ -26,10 +26,11 @@ export type IElectronAPI = {
 declare global {
 	interface Window {
 		electronAPI: IElectronAPI;
-	};
-	type ReturnValue<T> = {error: null, data: T} | {error: string, data: null};
+	}
+	type ReturnValue<T> =
+		| { error: null; data: T }
+		| { error: string; data: null };
 }
 
 // This file is a module.
 export {};
-

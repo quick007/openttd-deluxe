@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
-import { basePath, settingsPath } from "./paths";
 import { z } from "zod";
+import { settingsPath } from "./paths";
 
 /**
  * settings are the high level settings for the entire game (save-agnostic)
@@ -51,7 +51,7 @@ export const getSettings = async (): Promise<ReturnValue<Settings>> => {
 		const file = await fs.open(settingsPath);
 
 		const contents: Settings = JSON.parse(
-			await file.readFile({ encoding: "utf-8" })
+			await file.readFile({ encoding: "utf-8" }),
 		);
 
 		file.close();
@@ -66,7 +66,7 @@ export const getSettings = async (): Promise<ReturnValue<Settings>> => {
  * Leave blank to create/overwrite a file with the default settings
  */
 export const setSettings = async (
-	settings?: Settings
+	settings?: Settings,
 ): Promise<ReturnValue<null>> => {
 	try {
 		await fs.writeFile(
@@ -74,7 +74,7 @@ export const setSettings = async (
 			JSON.stringify(settings || defaultSettings),
 			{
 				encoding: "utf-8",
-			}
+			},
 		);
 
 		return { error: null, data: null };

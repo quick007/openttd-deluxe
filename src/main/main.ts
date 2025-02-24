@@ -1,8 +1,8 @@
-import { app, BrowserWindow, ipcMain, IpcMainEvent } from "electron";
-import path from "node:path";
+import { app, BrowserWindow, ipcMain } from "electron";
 import started from "electron-squirrel-startup";
-import ipcOn from "./ipc/.on";
+import path from "node:path";
 import ipcHandle from "./ipc/.handle";
+import ipcOn from "./ipc/.on";
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
@@ -27,7 +27,7 @@ const createWindow = () => {
 		mainWindow.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);
 	} else {
 		mainWindow.loadFile(
-			path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`)
+			path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
 		);
 	}
 
@@ -43,13 +43,11 @@ app.on("ready", () => {
 	Object.entries(ipcOn).forEach(([name, func]) => {
 		ipcMain.on(name, func);
 	});
-  Object.entries(ipcHandle).forEach(([name, func]) => {
+	Object.entries(ipcHandle).forEach(([name, func]) => {
 		ipcMain.handle(name, func);
 	});
 	createWindow();
 });
-
-
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

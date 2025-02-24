@@ -6,14 +6,15 @@ import { contextBridge, ipcRenderer } from "electron";
 export const ipcOnFunctionNames = ["setTitle"];
 export const ipcHandleFunctionNames = ["fetchSettings"];
 
-const ipcFunctions: { [name: string]: () => unknown} = {};
+const ipcFunctions: { [name: string]: () => unknown } = {};
 
 for (const name of ipcOnFunctionNames) {
-	ipcFunctions[name] = (...args: unknown[]) => ipcRenderer.send(name, ...args)
+	ipcFunctions[name] = (...args: unknown[]) => ipcRenderer.send(name, ...args);
 }
 
 for (const name of ipcHandleFunctionNames) {
-	ipcFunctions[name] = (...args: unknown[]) => ipcRenderer.invoke(name, ...args)
+	ipcFunctions[name] = (...args: unknown[]) =>
+		ipcRenderer.invoke(name, ...args);
 }
 
 // const ipcFunctions = Object.assign(
