@@ -63,6 +63,7 @@
     "@tanstack/virtual-core": "^3.13.0",
     "clsx": "^2.1.1",
     "electron-squirrel-startup": "^1.0.1",
+    "gl-matrix": "^3.4.3",
     "path": "^0.12.7",
     "postcss": "^8.5.2",
     "react": "^19.0.0",

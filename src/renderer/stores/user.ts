@@ -24,7 +24,7 @@ interface UserStore {
 }
 
 export const useUserStore = create<UserStore>()((set) => ({
-	page: Page.SETTINGS,
+	page: Page.IN_GAME,
 	settingsOpen: false,
 	userName: undefined,
 
